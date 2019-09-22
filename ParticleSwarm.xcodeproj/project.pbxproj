@@ -11,6 +11,9 @@
 		EE39407023366F6E0018C2F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE39406F23366F6E0018C2F0 /* ViewController.swift */; };
 		EE39407223366F6F0018C2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE39407123366F6F0018C2F0 /* Assets.xcassets */; };
 		EE39407523366F6F0018C2F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE39407323366F6F0018C2F0 /* Main.storyboard */; };
+		EE3940812337E2090018C2F0 /* Swarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3940802337E2090018C2F0 /* Swarm.swift */; };
+		EE3940832337E2130018C2F0 /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3940822337E2130018C2F0 /* Particle.swift */; };
+		EE3940862337E73B0018C2F0 /* NSPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3940852337E73B0018C2F0 /* NSPointExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		EE39407423366F6F0018C2F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE39407623366F6F0018C2F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE39407723366F6F0018C2F0 /* ParticleSwarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParticleSwarm.entitlements; sourceTree = "<group>"; };
+		EE3940802337E2090018C2F0 /* Swarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swarm.swift; sourceTree = "<group>"; };
+		EE3940822337E2130018C2F0 /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
+		EE3940852337E73B0018C2F0 /* NSPointExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPointExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,13 +60,48 @@
 			isa = PBXGroup;
 			children = (
 				EE39406D23366F6E0018C2F0 /* AppDelegate.swift */,
-				EE39406F23366F6E0018C2F0 /* ViewController.swift */,
+				EE39407F2337E1FB0018C2F0 /* PSO */,
+				EE39407E2337E1D60018C2F0 /* ViewController */,
+				EE3940842337E7240018C2F0 /* Extensions */,
+				EE39407D2337E1AE0018C2F0 /* SupportingFiles */,
+			);
+			path = ParticleSwarm;
+			sourceTree = "<group>";
+		};
+		EE39407D2337E1AE0018C2F0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				EE39407123366F6F0018C2F0 /* Assets.xcassets */,
-				EE39407323366F6F0018C2F0 /* Main.storyboard */,
 				EE39407623366F6F0018C2F0 /* Info.plist */,
 				EE39407723366F6F0018C2F0 /* ParticleSwarm.entitlements */,
 			);
-			path = ParticleSwarm;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		EE39407E2337E1D60018C2F0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE39406F23366F6E0018C2F0 /* ViewController.swift */,
+				EE39407323366F6F0018C2F0 /* Main.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EE39407F2337E1FB0018C2F0 /* PSO */ = {
+			isa = PBXGroup;
+			children = (
+				EE3940822337E2130018C2F0 /* Particle.swift */,
+				EE3940802337E2090018C2F0 /* Swarm.swift */,
+			);
+			path = PSO;
+			sourceTree = "<group>";
+		};
+		EE3940842337E7240018C2F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EE3940852337E73B0018C2F0 /* NSPointExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE3940862337E73B0018C2F0 /* NSPointExtensions.swift in Sources */,
+				EE3940812337E2090018C2F0 /* Swarm.swift in Sources */,
+				EE3940832337E2130018C2F0 /* Particle.swift in Sources */,
 				EE39407023366F6E0018C2F0 /* ViewController.swift in Sources */,
 				EE39406E23366F6E0018C2F0 /* AppDelegate.swift in Sources */,
 			);
@@ -271,11 +315,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ParticleSwarm/ParticleSwarm.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ParticleSwarm/SupportingFiles/ParticleSwarm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 68RXFZ5MN7;
-				INFOPLIST_FILE = ParticleSwarm/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ParticleSwarm/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -290,11 +334,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ParticleSwarm/ParticleSwarm.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ParticleSwarm/SupportingFiles/ParticleSwarm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 68RXFZ5MN7;
-				INFOPLIST_FILE = ParticleSwarm/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ParticleSwarm/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
